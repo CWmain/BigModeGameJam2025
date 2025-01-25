@@ -11,4 +11,5 @@ script = ExtResource("1_pd1pw")
 texture = ExtResource("1_tkqb4")
 
 [node name="Light" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_j8bnv")

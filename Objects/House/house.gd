@@ -12,7 +12,8 @@ var isDemanding: bool = false:
 			dark.hide()
 			light.show()
 		else:
-			light.hide()
 			dark.show()
+			light.hide()
+		isDemanding = value
 
 var DEMAND: int = 100
