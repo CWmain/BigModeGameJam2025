@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://hyb3vvce52a8"]
 
-[ext_resource type="PackedScene" uid="uid://dgyc2ihot57s7" path="res://Objects/House/house.tscn" id="1_x11gk"]
 [ext_resource type="PackedScene" uid="uid://3ywwd2acq657" path="res://Objects/DemandManager/demand_manager.tscn" id="2_rhm0s"]
+[ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="House2" parent="." instance=ExtResource("1_x11gk")]
-position = Vector2(534, 265)
-
-[node name="House" parent="." instance=ExtResource("1_x11gk")]
-position = Vector2(449, 260)
-
 [node name="DemandManager" parent="." instance=ExtResource("2_rhm0s")]
+
+[node name="HouseFactory" parent="." instance=ExtResource("3_0jk0m")]
+position = Vector2(575, 160)
+rowLength = 5
+toGenerate = 25
+HOUSE_WIDTH = 64
+HOUSE_HEIGHT = 64
