@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=4 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://3ywwd2acq657" path="res://Objects/DemandManager/demand_manager.tscn" id="2_rhm0s"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
+[ext_resource type="PackedScene" uid="uid://bik1qhl8twixa" path="res://Objects/Wheel/wheel.tscn" id="3_3j2tn"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -13,3 +14,7 @@ rowLength = 5
 toGenerate = 25
 HOUSE_WIDTH = 64
 HOUSE_HEIGHT = 64
+
+[node name="Wheel" parent="." instance=ExtResource("3_3j2tn")]
+position = Vector2(169, 121)
+scale = Vector2(5, 5)

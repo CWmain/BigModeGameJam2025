@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bik1qhl8twixa"]
+
+[ext_resource type="Script" path="res://Objects/Wheel/wheel.gd" id="1_5fxyp"]
+[ext_resource type="Texture2D" uid="uid://qe2gt1ogun0j" path="res://Objects/Wheel/Wheel.png" id="1_f27yq"]
+[ext_resource type="Texture2D" uid="uid://bxmmcjnnh5rsa" path="res://Objects/Wheel/WheelHandle.png" id="2_xtljp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqoid"]
+size = Vector2(6, 4)
+
+[node name="Wheel" type="Node2D"]
+script = ExtResource("1_5fxyp")
+
+[node name="Wheel" type="Sprite2D" parent="."]
+texture = ExtResource("1_f27yq")
+
+[node name="WheelHandle" type="Sprite2D" parent="."]
+position = Vector2(-15, 0)
+texture = ExtResource("2_xtljp")
+
+[node name="WheelHandleHitBox" type="Area2D" parent="WheelHandle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelHandle/WheelHandleHitBox"]
+shape = SubResource("RectangleShape2D_oqoid")
+
+[connection signal="input_event" from="WheelHandle/WheelHandleHitBox" to="." method="_on_wheel_handle_hit_box_input_event"]
+[connection signal="input_event" from="WheelHandle/WheelHandleHitBox" to="." method="_on_area_2d_input_event"]
