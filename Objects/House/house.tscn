@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgyc2ihot57s7"]
+
+[ext_resource type="Script" path="res://Objects/House/house.gd" id="1_pd1pw"]
+[ext_resource type="Texture2D" uid="uid://bqibkyd8wx7lr" path="res://Objects/House/DarkHouse.png" id="1_tkqb4"]
+[ext_resource type="Texture2D" uid="uid://bqtmy4ve7lous" path="res://Objects/House/LightHouse.png" id="2_j8bnv"]
+
+[node name="House" type="Node2D" groups=["Demander"]]
+script = ExtResource("1_pd1pw")
+
+[node name="Dark" type="Sprite2D" parent="."]
+texture = ExtResource("1_tkqb4")
+
+[node name="Light" type="Sprite2D" parent="."]
+texture = ExtResource("2_j8bnv")
