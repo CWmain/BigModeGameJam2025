@@ -16,9 +16,21 @@ func _process(_delta):
 
 func getSupply() -> int:
 	var toReturn: int = SUPPLY
-	SUPPLY = 0
+	SUPPLY -= powerDecreasePerTick
+	if SUPPLY < 0:
+		SUPPLY = 0
+	
 	return toReturn
 
 func bigFire() -> void:
 	print("Furnace combusted")
 	SUPPLY = 0
+
+
+func _on_collection_body_entered(body):
+	if typeof(body) != typeof(Coal):
+		print("Wrong type")
+		return
+	SUPPLY += powerPerCoal
+	print("Coal Collected")
+	
