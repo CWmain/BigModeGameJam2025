@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqtmy4ve7lous" path="res://Objects/House/LightHouse.png" id="2_j8bnv"]
 
 [node name="House" type="Node2D" groups=["Demander"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_pd1pw")
 
 [node name="Dark" type="Sprite2D" parent="."]

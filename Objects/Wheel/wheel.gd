@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var wheel_handle = $WheelHandle
+@onready var rigid_body_2d = $RigidBody2D
 
 @export var powerPerTurn : int = 10
 
@@ -47,5 +48,8 @@ func getSupply() -> int:
 	return toReturn
 
 func fallOff() -> void:
+	print("Wheel fell off")
 	SUPPLY = 0
-	hide()
+	canHold = false
+	wheel_handle.hide()
+	rigid_body_2d.freeze = false
