@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx2ksu7yukllp"]
+
+[ext_resource type="Script" path="res://Objects/LevelTimer/LevelTimer.gd" id="1_4powd"]
+
+[node name="LevelTimer" type="Timer"]
+autostart = true
+script = ExtResource("1_4powd")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
