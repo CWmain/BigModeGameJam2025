@@ -7,7 +7,7 @@ extends Node2D
 @export var powerDecreasePerTick: int = 10
 
 var SUPPLY : int = 0
-
+var broken: bool = false
 
 func _process(_delta):
 	# If overworked breaks
@@ -15,6 +15,9 @@ func _process(_delta):
 		bigFire()
 
 func getSupply() -> int:
+	if broken:
+		return 0
+		
 	var toReturn: int = SUPPLY
 	SUPPLY -= powerDecreasePerTick
 	if SUPPLY < 0:
@@ -24,6 +27,7 @@ func getSupply() -> int:
 
 func bigFire() -> void:
 	print("Furnace combusted")
+	broken = true
 	SUPPLY = 0
 
 

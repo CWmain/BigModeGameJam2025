@@ -9,11 +9,14 @@ extends Node2D
 @export var maxPower : int = 20
 
 var canHold: bool = false
+
+## Used to prevent spinning the wheel the wrong way
 var oldRotation: float = -1
 
 var SUPPLY : int = 0
-signal supplyPower(supply: int)
+var broken: bool = false
 
+## Bool to prevent double adding when passing 2 Pi rotation
 var canSupplyAgain: bool = true
 
 func _process(_delta):
@@ -46,12 +49,16 @@ func _on_wheel_handle_hit_box_mouse_entered():
 	canHold = true
 
 func getSupply() -> int:
+	if broken:
+		return 0
+		
 	var toReturn: int = SUPPLY
 	SUPPLY = 0
 	return toReturn
 
 func fallOff() -> void:
 	print("Wheel fell off")
+	broken = true
 	SUPPLY = 0
 	canHold = false
 	wheel_handle.hide()
