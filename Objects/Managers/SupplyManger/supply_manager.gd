@@ -14,7 +14,7 @@ func _on_updateSupply():
 	var curSupply: int = 0
 	var suppliers = get_tree().get_nodes_in_group("Supplier")
 	for s in suppliers:
-		curSupply += s.SUPPLY
+		curSupply += s.getSupply()
 	totalSupply = curSupply
 	updateLabel.emit()	
 	

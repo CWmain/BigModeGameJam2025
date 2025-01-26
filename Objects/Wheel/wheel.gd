@@ -2,11 +2,14 @@ extends Node2D
 
 @onready var wheel_handle = $WheelHandle
 
+@export var powerPerTurn : int = 10
+
 var canHold: bool = false
 var oldRotation: float = -1
 
-var SUPPLY : int = 10
+var SUPPLY : int = 0
 signal supplyPower(supply: int)
+
 var canSupplyAgain: bool = true
 
 func _process(_delta):
@@ -25,13 +28,24 @@ func _process(_delta):
 	# Since we are in process, use a bool to ensure the emit only triggers once
 	if rotation > PI-0.1 and rotation < PI+0.1 and canSupplyAgain:
 		canSupplyAgain = false
-		supplyPower.emit(SUPPLY)
+		SUPPLY += powerPerTurn
 	
 	# Once the otherside is reached, allow another supply trigger to occur
 	if rotation > (2*PI)-0.1 and rotation < (2*PI)+0.1:
 		canSupplyAgain = true
+		
+	# If overworked breaks
+	if SUPPLY > 20:
+		fallOff()
 
 func _on_wheel_handle_hit_box_mouse_entered():
 	canHold = true
 
+func getSupply() -> int:
+	var toReturn: int = SUPPLY
+	SUPPLY = 0
+	return toReturn
 
+func fallOff() -> void:
+	SUPPLY = 0
+	hide()
