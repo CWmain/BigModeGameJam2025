@@ -56,7 +56,7 @@ position = Vector2(302, 10)
 sm = NodePath("../../SupplyManager")
 
 [node name="CoalGenerator" parent="." instance=ExtResource("10_gfq1h")]
-position = Vector2(298, 396)
+position = Vector2(193, 350)
 
 [node name="Coal" parent="." instance=ExtResource("9_xfwi0")]
-position = Vector2(132, 455)
+position = Vector2(27, 409)
