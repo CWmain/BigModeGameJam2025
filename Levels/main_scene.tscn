@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=9 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://3ywwd2acq657" path="res://Objects/Managers/DemandManager/demand_manager.tscn" id="2_rhm0s"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
 [ext_resource type="PackedScene" uid="uid://bik1qhl8twixa" path="res://Objects/Wheel/wheel.tscn" id="3_3j2tn"]
+[ext_resource type="PackedScene" uid="uid://kd44uomi0c6u" path="res://Objects/Managers/SupplyManger/supply_manager.tscn" id="3_piu73"]
 [ext_resource type="PackedScene" uid="uid://cx2ksu7yukllp" path="res://Objects/LevelTimer/level_timer.tscn" id="4_d0kj3"]
 [ext_resource type="PackedScene" uid="uid://dlscus0ab1wi7" path="res://Objects/Displays/Clock/clock.tscn" id="5_7ud24"]
 [ext_resource type="PackedScene" uid="uid://dxxdrcyoky3nn" path="res://Objects/Displays/Demand/demand.tscn" id="6_bm4fj"]
@@ -11,6 +12,9 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="DemandManager" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("2_rhm0s")]
+timer = NodePath("../LevelTimer")
+
+[node name="SupplyManager" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("3_piu73")]
 timer = NodePath("../LevelTimer")
 
 [node name="HouseFactory" parent="." instance=ExtResource("3_0jk0m")]
@@ -36,6 +40,6 @@ timer = NodePath("../../LevelTimer")
 position = Vector2(519, 8)
 dm = NodePath("../../DemandManager")
 
-[node name="Supply" parent="Displays" node_paths=PackedStringArray("dm") instance=ExtResource("7_ik7vq")]
+[node name="Supply" parent="Displays" node_paths=PackedStringArray("sm") instance=ExtResource("7_ik7vq")]
 position = Vector2(302, 10)
-dm = NodePath("../../DemandManager")
+sm = NodePath("../../SupplyManager")
