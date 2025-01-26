@@ -14,5 +14,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Hello"
+text = "Clock"
 metadata/_edit_use_anchors_ = true

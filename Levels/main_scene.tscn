@@ -26,9 +26,9 @@ scale = Vector2(5, 5)
 [node name="LevelTimer" parent="." instance=ExtResource("4_d0kj3")]
 
 [node name="Clock" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("5_7ud24")]
-position = Vector2(365, 20)
+position = Vector2(16, 14)
 timer = NodePath("../LevelTimer")
 
 [node name="Demand" parent="." node_paths=PackedStringArray("dm") instance=ExtResource("6_bm4fj")]
-position = Vector2(549, 24)
+position = Vector2(519, 8)
 dm = NodePath("../DemandManager")
