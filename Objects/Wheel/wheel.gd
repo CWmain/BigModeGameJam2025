@@ -5,6 +5,9 @@ extends Node2D
 
 @export var powerPerTurn : int = 10
 
+## When this power is exceeded triggers a break
+@export var maxPower : int = 20
+
 var canHold: bool = false
 var oldRotation: float = -1
 
@@ -36,7 +39,7 @@ func _process(_delta):
 		canSupplyAgain = true
 		
 	# If overworked breaks
-	if SUPPLY > 20:
+	if SUPPLY > maxPower:
 		fallOff()
 
 func _on_wheel_handle_hit_box_mouse_entered():
