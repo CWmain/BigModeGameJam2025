@@ -30,6 +30,11 @@ func _on_mouse_entered():
 	if !grab_cooldown:
 		trackMouse = true
 
+func _on_mouse_exited():
+	if !Input.is_action_pressed("Hold"):
+		trackMouse = false
 
 func _on_grab_cooldown_timeout():
 	grab_cooldown = false
+
+
