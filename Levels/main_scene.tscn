@@ -27,7 +27,7 @@ HOUSE_WIDTH = 96
 HOUSE_HEIGHT = 96
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(169, 121)
+position = Vector2(165, 52)
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
