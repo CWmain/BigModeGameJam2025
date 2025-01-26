@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqoid"]
 size = Vector2(6, 4)
 
-[node name="Wheel" type="Node2D"]
+[node name="Wheel" type="Node2D" groups=["Supplier"]]
 script = ExtResource("1_5fxyp")
 
 [node name="Wheel" type="Sprite2D" parent="."]
