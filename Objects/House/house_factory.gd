@@ -24,4 +24,4 @@ func _ready():
 			toPlacePosition[0] = 0
 			toPlacePosition[1] += HOUSE_HEIGHT
 		i += 1
-	print("Finished placing")		
+
