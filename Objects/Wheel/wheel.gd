@@ -63,4 +63,4 @@ func fallOff() -> void:
 	canHold = false
 	wheel_handle.hide()
 	rigid_body_2d.freeze = false
-	rigid_body_2d.apply_impulse(Vector2(100,0))
+	rigid_body_2d.apply_impulse(Vector2(200,0))

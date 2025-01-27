@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bxmmcjnnh5rsa" path="res://Objects/Wheel/WheelHandle.png" id="2_xtljp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdxlf"]
-radius = 19.0263
+radius = 84.0238
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqoid"]
 size = Vector2(6, 4)
@@ -17,13 +17,15 @@ script = ExtResource("1_5fxyp")
 freeze = true
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(5, 5)
 texture = ExtResource("1_f27yq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_rdxlf")
 
 [node name="WheelHandle" type="Sprite2D" parent="."]
-position = Vector2(-15, 0)
+position = Vector2(-77, 0)
+scale = Vector2(5, 5)
 texture = ExtResource("2_xtljp")
 
 [node name="WheelHandleHitBox" type="Area2D" parent="WheelHandle"]
