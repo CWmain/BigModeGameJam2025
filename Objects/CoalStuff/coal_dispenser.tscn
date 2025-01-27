@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm5gydgxbfesa"]
+
+[ext_resource type="Script" path="res://Objects/CoalStuff/coal_dispenser.gd" id="1_a2t8b"]
+[ext_resource type="Texture2D" uid="uid://civygdhkst1cb" path="res://Objects/CoalStuff/CoalDispenser.png" id="2_hocno"]
+
+[node name="CoalDispenser" type="Node2D"]
+script = ExtResource("1_a2t8b")
+
+[node name="CoalDispenser" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_hocno")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-60, 79, 61, 81, 60, -50, 80, -49, 80, -81, 21, -81, 22, 62, -20, 62, -21, -80, -80, -81, -80, -49, -60, -49)

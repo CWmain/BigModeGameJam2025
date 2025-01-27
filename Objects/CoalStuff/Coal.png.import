@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xa7tkmao72xt"
-path="res://.godot/imported/TempCoalGen.png-ea06d29c00e50259bfdbd49f18ebf87f.ctex"
+uid="uid://bp3gvimjcytw"
+path="res://.godot/imported/Coal.png-016831fb077fc12ad665723a9ccd5d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/CoalGenerator/TempCoalGen.png"
-dest_files=["res://.godot/imported/TempCoalGen.png-ea06d29c00e50259bfdbd49f18ebf87f.ctex"]
+source_file="res://Objects/CoalStuff/Coal.png"
+dest_files=["res://.godot/imported/Coal.png-016831fb077fc12ad665723a9ccd5d17.ctex"]
 
 [params]
 

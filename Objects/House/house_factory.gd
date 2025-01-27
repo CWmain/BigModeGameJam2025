@@ -17,7 +17,6 @@ func _ready():
 	while i < toGenerate:
 		var curHouse: House = houseToPlace.instantiate()
 		curHouse.position = toPlacePosition
-		add_child(curHouse)
 		
 		toPlacePosition += Vector2(HOUSE_WIDTH, 0)
 		# Max row sized reach, so reset to new row

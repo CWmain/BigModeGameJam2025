@@ -20,7 +20,6 @@ func _physics_process(_delta):
 		# And the closer it is the slower it moves 
 		linear_velocity = directionToMouse*distanceToMouse*20
 
-	
 	if Input.is_action_just_released("Hold"):
 		trackMouse = false
 		grab_cooldown = true
@@ -37,4 +36,6 @@ func _on_mouse_exited():
 func _on_grab_cooldown_timeout():
 	grab_cooldown = false
 
-
+func destroy():
+	print("Coal: Coal Destroyed")
+	queue_free()

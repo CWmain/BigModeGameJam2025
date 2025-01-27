@@ -74,5 +74,6 @@ func _on_collection_body_entered(body):
 		print("Wrong type")
 		return
 	SUPPLY += powerPerCoal
+	body.destroy()
 	print("Coal Collected")
 	
