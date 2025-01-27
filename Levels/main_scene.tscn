@@ -15,24 +15,24 @@
 
 [node name="MainScene" type="Node2D"]
 
+[node name="HouseFactory" parent="." instance=ExtResource("3_0jk0m")]
+position = Vector2(626, 141)
+rowLength = 5
+toGenerate = 25
+HOUSE_WIDTH = 96
+HOUSE_HEIGHT = 96
+
 [node name="DemandManager" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("2_rhm0s")]
 timer = NodePath("../LevelTimer")
 
 [node name="SupplyManager" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("3_piu73")]
 timer = NodePath("../LevelTimer")
 
-[node name="HouseFactory" parent="." instance=ExtResource("3_0jk0m")]
-position = Vector2(575, 160)
-rowLength = 5
-toGenerate = 25
-HOUSE_WIDTH = 96
-HOUSE_HEIGHT = 96
-
 [node name="Wheel" parent="." instance=ExtResource("3_3j2tn")]
 position = Vector2(169, 121)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(172, 449)
+position = Vector2(172, 353)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(29.4, 35.6)
@@ -55,9 +55,9 @@ position = Vector2(302, 10)
 sm = NodePath("../../SupplyManager")
 
 [node name="CoalGenerator" parent="." instance=ExtResource("10_gfq1h")]
-position = Vector2(332, 402)
+position = Vector2(332, 306)
 
 [node name="CoalDispenser" parent="." instance=ExtResource("11_uyeec")]
 z_index = 1
-position = Vector2(7, 404)
+position = Vector2(7, 308)
 rotation = 1.57079
