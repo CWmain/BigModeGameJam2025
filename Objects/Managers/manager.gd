@@ -48,6 +48,11 @@ func _on_updateSupply():
 	supplyUpdated = true
 
 func _on_updateDemand():
+	# Toggle a random house
+	var rIndex = int(random.randf()*100) % demandList.size()
+	demandList[rIndex].isDemanding = !demandList[rIndex].isDemanding
+	
+	# Get the current demand
 	var curDemand: int = 0
 	var demanaders = get_tree().get_nodes_in_group("Demander")
 	for d: House in demanaders:
