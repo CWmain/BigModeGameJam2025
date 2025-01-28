@@ -10,8 +10,17 @@ var totalDemand: int = 0
 var supplyUpdated: bool = false
 var demandUpdated: bool = false
 
+var demandList: Array[House]
+
+## Seed for all randomness in game
+@export var rSeed = 0
+var random: RandomNumberGenerator
+
 func _ready():
 	assert(timer != null)
+	random = RandomNumberGenerator.new()
+	random.seed = rSeed
+	
 	timer.updateSupply.connect(_on_updateSupply)
 	timer.updateDemand.connect(_on_updateDemand)
 

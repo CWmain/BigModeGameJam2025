@@ -31,12 +31,13 @@ m = NodePath("../../Manager")
 position = Vector2(302, 10)
 m = NodePath("../../Manager")
 
-[node name="HouseFactory" parent="." instance=ExtResource("3_0jk0m")]
+[node name="HouseFactory" parent="." node_paths=PackedStringArray("m") instance=ExtResource("3_0jk0m")]
 position = Vector2(626, 141)
 rowLength = 5
 toGenerate = 25
 HOUSE_WIDTH = 96
 HOUSE_HEIGHT = 96
+m = NodePath("../Manager")
 
 [node name="Wheel" parent="." instance=ExtResource("3_3j2tn")]
 position = Vector2(169, 121)
