@@ -1,13 +1,13 @@
 extends Node2D
 
-@export var sm: SupplyManager
+@export var m: Manager
 @onready var label = $Label
 
 func _ready():
-	assert(sm != null)
-	sm.updateLabel.connect(_on_updateLabel)
+	assert(m != null)
+	m.updateLabel.connect(_on_updateLabel)
 
 func _on_updateLabel():
-	label.text = str(sm.totalSupply)
+	label.text = str(m.totalSupply)
 
 

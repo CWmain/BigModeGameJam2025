@@ -42,13 +42,12 @@ shape = SubResource("WorldBoundaryShape2D_ae6m6")
 position = Vector2(16, 14)
 timer = NodePath("../../LevelTimer")
 
-[node name="Demand" parent="Displays" node_paths=PackedStringArray("m") instance=ExtResource("6_bm4fj")]
+[node name="Demand" parent="Displays" instance=ExtResource("6_bm4fj")]
 position = Vector2(519, 8)
-m = NodePath("../../Manager")
 
-[node name="Supply" parent="Displays" node_paths=PackedStringArray("m") instance=ExtResource("7_ik7vq")]
+[node name="Supply" parent="Displays" node_paths=PackedStringArray("sm") instance=ExtResource("7_ik7vq")]
 position = Vector2(302, 10)
-m = NodePath("../../Manager")
+sm = NodePath("")
 
 [node name="CoalGenerator" parent="." instance=ExtResource("10_gfq1h")]
 position = Vector2(332, 306)
