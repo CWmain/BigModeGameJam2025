@@ -16,4 +16,4 @@ var isDemanding: bool = false:
 			light.hide()
 		isDemanding = value
 
-var DEMAND: int = 100
+var DEMAND: int = 50
