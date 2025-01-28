@@ -10,7 +10,7 @@ func _ready():
 
 func _on_updateLabel():
 	label.text = str(m.totalSupply)
-	if m.totalSupply < m.totalDemand - 50:
+	if m.overSupply:
 		color_rect.color = Color(255,0,0)
 	else:
 		color_rect.color = Color(0,0,0)
