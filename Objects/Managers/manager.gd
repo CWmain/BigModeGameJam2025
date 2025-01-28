@@ -2,6 +2,9 @@ extends Node
 class_name Manager
 
 @export var timer: LevelTimer 
+## Seed for all randomness in game
+@export var rSeed = 0
+var random: RandomNumberGenerator
 signal updateLabel
 
 var totalSupply: int = 0
@@ -12,9 +15,9 @@ var demandUpdated: bool = false
 
 var demandList: Array[House]
 
-## Seed for all randomness in game
-@export var rSeed = 0
-var random: RandomNumberGenerator
+@export_category("Demand")
+@export var ticksUntilDemandChange: int = 5
+@export var sizeOfDemandChange: int = 2
 
 func _ready():
 	assert(timer != null)
@@ -49,8 +52,10 @@ func _on_updateSupply():
 
 func _on_updateDemand():
 	# Toggle a random house
-	var rIndex = int(random.randf()*100) % demandList.size()
-	demandList[rIndex].isDemanding = !demandList[rIndex].isDemanding
+	if timer.tickCount % ticksUntilDemandChange == 0:
+		for i in range(0,sizeOfDemandChange):
+			var rIndex = int(random.randf()*100) % demandList.size()
+			demandList[rIndex].isDemanding = !demandList[rIndex].isDemanding
 	
 	# Get the current demand
 	var curDemand: int = 0
