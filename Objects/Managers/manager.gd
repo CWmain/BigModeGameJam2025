@@ -19,6 +19,17 @@ var demandList: Array[House]
 @export var ticksUntilDemandChange: int = 5
 @export var sizeOfDemandChange: int = 2
 
+@export_category("Loss Condition")
+## The number of ticks where supply or demand remains unmet in a row
+## resulting is a loss
+@export var ticksUntilLoss: int = 10
+## The largest value demand and supply can differ both the fail state starts counting
+@export var maxSupplyDemandDiff: int = 100
+var tickStreak: int = 0
+
+var overSupply: bool = false
+var overDemand: bool = false
+
 func _ready():
 	assert(timer != null)
 	random = RandomNumberGenerator.new()
@@ -30,10 +41,22 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Test_Click"):
 		toggleAllHouses()
-		
+	
+	# Once both supply and demand have been updated in the current tick
 	if (supplyUpdated and demandUpdated):
 		supplyUpdated = false
 		demandUpdated = false
+		
+		overSupply = totalSupply > totalDemand + maxSupplyDemandDiff
+		overDemand = totalDemand > totalSupply + maxSupplyDemandDiff  
+		if overSupply or overDemand:
+			tickStreak += 1
+		else:
+			tickStreak = 0
+		
+		if tickStreak == ticksUntilLoss:
+			gameLoss()
+		
 		updateLabel.emit()	
 
 ## Test function to ensure all homes toggle correctly
@@ -65,3 +88,6 @@ func _on_updateDemand():
 			curDemand += d.DEMAND
 	totalDemand = curDemand
 	demandUpdated = true
+
+func gameLoss():
+	print("\nGAME OVER\n")
