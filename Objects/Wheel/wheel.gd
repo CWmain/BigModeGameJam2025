@@ -3,10 +3,10 @@ extends Node2D
 @onready var wheel_handle = $WheelHandle
 @onready var rigid_body_2d = $RigidBody2D
 
-@export var powerPerTurn : int = 10
+@export var powerPerTurn : int = 50
 
 ## When this power is exceeded triggers a break
-@export var maxPower : int = 20
+@export var maxPower : int = 300
 
 var canHold: bool = false
 
