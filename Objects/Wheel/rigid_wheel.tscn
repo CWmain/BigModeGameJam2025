@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://doe6rhr40k6g"]
+
+[ext_resource type="Texture2D" uid="uid://qe2gt1ogun0j" path="res://Objects/Wheel/Wheel.png" id="1_dqq3h"]
+[ext_resource type="Script" path="res://Objects/Wheel/rigid_wheel.gd" id="1_ofbgs"]
+[ext_resource type="Texture2D" uid="uid://bxmmcjnnh5rsa" path="res://Objects/Wheel/WheelHandle.png" id="2_xli71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwynh"]
+radius = 85.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4vsh"]
+size = Vector2(26, 16)
+
+[node name="RigidWheel" type="RigidBody2D" groups=["Supplier"]]
+angular_damp = 2.0
+script = ExtResource("1_ofbgs")
+maxPower = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pwynh")
+
+[node name="Wheel" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dqq3h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-73, 0)
+node_a = NodePath("..")
+node_b = NodePath("../HandlePhysics")
+
+[node name="HandlePhysics" type="RigidBody2D" parent="."]
+position = Vector2(-85, 5.96046e-08)
+input_pickable = true
+gravity_scale = 0.0
+
+[node name="WheelHandle" type="Sprite2D" parent="HandlePhysics"]
+scale = Vector2(5, 5)
+texture = ExtResource("2_xli71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandlePhysics"]
+position = Vector2(7.62939e-06, 4.17233e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_k4vsh")
+
+[connection signal="mouse_entered" from="HandlePhysics" to="." method="_on_handle_physics_mouse_entered"]
