@@ -39,6 +39,14 @@ HOUSE_WIDTH = 96
 HOUSE_HEIGHT = 96
 m = NodePath("../Manager")
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(465, 316)
+rotation = 4.71238
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(29.4, 35.6)
+shape = SubResource("WorldBoundaryShape2D_ae6m6")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(172, 353)
 
@@ -47,6 +55,9 @@ position = Vector2(29.4, 35.6)
 shape = SubResource("WorldBoundaryShape2D_ae6m6")
 
 [node name="LevelTimer" parent="." instance=ExtResource("4_d0kj3")]
+
+[node name="WheelScene" parent="." instance=ExtResource("10_2us4h")]
+position = Vector2(172, 125)
 
 [node name="CoalGenerator" parent="." instance=ExtResource("10_gfq1h")]
 position = Vector2(332, 306)
@@ -58,6 +69,3 @@ powerDecreasePerTick = 50
 z_index = 1
 position = Vector2(7, 308)
 rotation = 1.57079
-
-[node name="WheelScene" parent="." instance=ExtResource("10_2us4h")]
-position = Vector2(172, 125)
