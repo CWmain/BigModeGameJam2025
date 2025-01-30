@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://n015st5crxns"]
+
+[ext_resource type="Script" path="res://Objects/Wheel/wheel_scene.gd" id="1_h6aqi"]
+[ext_resource type="PackedScene" uid="uid://doe6rhr40k6g" path="res://Objects/Wheel/rigid_wheel.tscn" id="1_xhmc5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mu8og"]
+
+[node name="WheelScene" type="Node2D"]
+script = ExtResource("1_h6aqi")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../WheelWall")
+node_b = NodePath("../RigidWheel")
+
+[node name="RigidWheel" parent="." instance=ExtResource("1_xhmc5")]
+maxPower = 300
+
+[node name="WheelWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelWall"]
+shape = SubResource("CircleShape2D_mu8og")

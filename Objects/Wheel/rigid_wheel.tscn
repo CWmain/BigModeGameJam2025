@@ -36,7 +36,6 @@ texture = ExtResource("2_xli71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlePhysics"]
 position = Vector2(7.62939e-06, 4.17233e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k4vsh")
 
 [node name="Sparks" type="CPUParticles2D" parent="."]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtxljlpr51qa3"]
+
+[ext_resource type="Script" path="res://Objects/Reactor/power_gauge.gd" id="1_7t83l"]
+[ext_resource type="Texture2D" uid="uid://cl81xoy2dlip5" path="res://Objects/Reactor/PowerGauge.png" id="1_qif8k"]
+[ext_resource type="Shader" path="res://Objects/Reactor/power_gauge.gdshader" id="1_xx5mh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgd4i"]
+shader = ExtResource("1_xx5mh")
+shader_parameter/percentFull = 0.0
+
+[node name="PowerGauge" type="Node2D"]
+script = ExtResource("1_7t83l")
+
+[node name="PowerGauge" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sgd4i")
+scale = Vector2(5, 5)
+texture = ExtResource("1_qif8k")
