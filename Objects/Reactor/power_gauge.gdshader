@@ -1,11 +1,11 @@
 shader_type canvas_item;
 
-uniform float percentFull = 0.6;
+uniform float percentFull : hint_range(0, 1);
 
 void fragment() {
 	float shiftedPercent = (1.0-percentFull)*0.75+0.125;
 	if (COLOR == vec4(0,0,0,1) && UV.y > shiftedPercent){
-		COLOR = vec4(0.5,0.1,1,1);
+		COLOR = vec4(percentFull,1.0-percentFull,1.0-percentFull,1);
 	}
 }
 
