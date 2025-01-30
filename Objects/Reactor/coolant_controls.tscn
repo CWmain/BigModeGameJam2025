@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnvewg8qqs33d"]
+
+[ext_resource type="Texture2D" uid="uid://bia3e57mul6q2" path="res://Objects/Reactor/CoolantHandleHolder.png" id="1_qakb3"]
+[ext_resource type="Texture2D" uid="uid://b2ctgbrh4v3p1" path="res://Objects/Reactor/CoolantHandle.png" id="2_oallx"]
+
+[node name="CoolantControls" type="Node2D"]
+
+[node name="CoolantHandleHolder" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_qakb3")
+
+[node name="CoolantHandle" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_oallx")
