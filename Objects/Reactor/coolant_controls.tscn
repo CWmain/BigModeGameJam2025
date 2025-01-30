@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnvewg8qqs33d"]
+[gd_scene load_steps=5 format=3 uid="uid://bnvewg8qqs33d"]
 
+[ext_resource type="Script" path="res://Objects/Reactor/coolant_controls.gd" id="1_giwhw"]
 [ext_resource type="Texture2D" uid="uid://bia3e57mul6q2" path="res://Objects/Reactor/CoolantHandleHolder.png" id="1_qakb3"]
 [ext_resource type="Texture2D" uid="uid://b2ctgbrh4v3p1" path="res://Objects/Reactor/CoolantHandle.png" id="2_oallx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t4o7"]
+size = Vector2(16, 8)
+
 [node name="CoolantControls" type="Node2D"]
+script = ExtResource("1_giwhw")
 
 [node name="CoolantHandleHolder" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
 texture = ExtResource("1_qakb3")
 
 [node name="CoolantHandle" type="Sprite2D" parent="."]
+position = Vector2(0, -60)
 scale = Vector2(5, 5)
 texture = ExtResource("2_oallx")
+
+[node name="Area2D" type="Area2D" parent="CoolantHandle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoolantHandle/Area2D"]
+position = Vector2(2.86102e-07, 1.90735e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0t4o7")
+
+[connection signal="mouse_entered" from="CoolantHandle/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CoolantHandle/Area2D" to="." method="_on_area_2d_mouse_exited"]

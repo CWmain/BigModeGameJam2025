@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=13 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://cfmi4st3fgh6x" path="res://Objects/Managers/manager.tscn" id="2_k8he1"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cml6fxx0w4vff" path="res://Objects/CoalStuff/coal_generator.tscn" id="10_gfq1h"]
 [ext_resource type="PackedScene" uid="uid://dtxljlpr51qa3" path="res://Objects/Reactor/power_gauge.tscn" id="10_hlsne"]
 [ext_resource type="PackedScene" uid="uid://dm5gydgxbfesa" path="res://Objects/CoalStuff/coal_dispenser.tscn" id="11_uyeec"]
+[ext_resource type="PackedScene" uid="uid://bnvewg8qqs33d" path="res://Objects/Reactor/coolant_controls.tscn" id="11_xxim2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ae6m6"]
 
@@ -73,3 +74,6 @@ rotation = 1.57079
 
 [node name="PowerGauge" parent="." instance=ExtResource("10_hlsne")]
 position = Vector2(118, 526)
+
+[node name="CoolantControls" parent="." instance=ExtResource("11_xxim2")]
+position = Vector2(219, 525)
