@@ -8,7 +8,7 @@ extends Node2D
 @export var maxPower: int = 1000
 @export var addedPower: int = 100
 ## When the coolent is maxed, SUPPLY is reduced by below amount
-@export var subtractedPower: int = 500
+@export var subtractedPower: int = 1000
 var SUPPLY: int = 0:
 	set(value):
 		SUPPLY = max(0, value)
@@ -16,7 +16,7 @@ var SUPPLY: int = 0:
 
 func _process(_delta):
 	if SUPPLY > maxPower:
-		print("Reactor Overload (BAD)")
+		power_gauge.breakGauge()
 		return
 	power_gauge.setGauge(float(SUPPLY)/float(maxPower))
 

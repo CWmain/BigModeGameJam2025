@@ -5,3 +5,6 @@ extends Node2D
 func setGauge(percent: float) -> void:
 	assert(percent >= 0.0 and percent <= 1.0)
 	power_gauge.material.set_shader_parameter("percentFull", percent)
+
+func breakGauge() -> void:
+	print("power_gauge: Cool break effect")
