@@ -19,6 +19,7 @@ offset_top = 315.0
 offset_right = 738.0
 offset_bottom = 578.0
 theme = ExtResource("1_gk2el")
+theme_override_constants/separation = 16
 
 [node name="Retry" type="Button" parent="MenuItems"]
 layout_mode = 2
