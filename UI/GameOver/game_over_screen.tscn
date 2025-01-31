@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://64sh36xwdjgq"]
+[gd_scene load_steps=3 format=3 uid="uid://64sh36xwdjgq"]
+
+[ext_resource type="FontFile" uid="uid://vhgmniwlai3w" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="1_iivvt"]
+
+[sub_resource type="Theme" id="Theme_nkkt2"]
+default_font = ExtResource("1_iivvt")
+default_font_size = 64
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -9,23 +15,23 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_nkkt2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MenuItems" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 132.0
 offset_right = 444.0
 offset_bottom = 172.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Retry" type="Button" parent="MenuItems"]
 layout_mode = 2
-text = "Hello"
+text = "Retry"
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+[node name="MainMenu" type="Button" parent="MenuItems"]
 layout_mode = 2
-text = "Hey"
-item_count = 2
-popup/item_0/text = "Hi"
-popup/item_0/id = 0
-popup/item_1/text = "World"
-popup/item_1/id = 1
+text = "Main Menu"
+
+[node name="Settings" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Settings"
