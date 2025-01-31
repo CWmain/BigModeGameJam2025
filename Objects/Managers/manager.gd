@@ -91,3 +91,4 @@ func _on_updateDemand():
 
 func gameLoss():
 	print("\nGAME OVER\n")
+	timer.stop()
