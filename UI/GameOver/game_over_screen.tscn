@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://64sh36xwdjgq"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 132.0
+offset_right = 444.0
+offset_bottom = 172.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hello"
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hey"
+item_count = 2
+popup/item_0/text = "Hi"
+popup/item_0/id = 0
+popup/item_1/text = "World"
+popup/item_1/id = 1
