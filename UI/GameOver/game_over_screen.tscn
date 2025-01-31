@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://64sh36xwdjgq"]
+[gd_scene load_steps=2 format=3 uid="uid://64sh36xwdjgq"]
 
-[ext_resource type="FontFile" uid="uid://vhgmniwlai3w" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="1_iivvt"]
-
-[sub_resource type="Theme" id="Theme_nkkt2"]
-default_font = ExtResource("1_iivvt")
-default_font_size = 64
+[ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="1_gk2el"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -15,14 +11,14 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_nkkt2")
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 404.0
-offset_top = 132.0
-offset_right = 444.0
-offset_bottom = 172.0
+offset_left = 415.0
+offset_top = 315.0
+offset_right = 738.0
+offset_bottom = 578.0
+theme = ExtResource("1_gk2el")
 
 [node name="Retry" type="Button" parent="MenuItems"]
 layout_mode = 2

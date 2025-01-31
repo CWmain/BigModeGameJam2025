@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://vhgmniwlai3w"
-path="res://.godot/imported/PixelifySans-VariableFont_wght.ttf-ecd504d601b15dc473b9caf0868cf760.fontdata"
+path="res://.godot/imported/PixelifySans-VariableFont_wght.ttf-dd24da28ec8d8ecdff33370d05b451f5.fontdata"
 
 [deps]
 
-source_file="res://Fonts/PixelifySans-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/PixelifySans-VariableFont_wght.ttf-ecd504d601b15dc473b9caf0868cf760.fontdata"]
+source_file="res://Themes/PixelifySans-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/PixelifySans-VariableFont_wght.ttf-dd24da28ec8d8ecdff33370d05b451f5.fontdata"]
 
 [params]
 
