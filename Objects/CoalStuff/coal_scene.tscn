@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb0gbcopvyc4f"]
+
+[ext_resource type="PackedScene" uid="uid://dm5gydgxbfesa" path="res://Objects/CoalStuff/coal_dispenser.tscn" id="1_l2xco"]
+[ext_resource type="PackedScene" uid="uid://cml6fxx0w4vff" path="res://Objects/CoalStuff/coal_generator.tscn" id="2_bg3mh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xq60u"]
+
+[node name="CoalScene" type="Node2D"]
+
+[node name="CoalDispenser" parent="." instance=ExtResource("1_l2xco")]
+position = Vector2(0, -80)
+rotation = 1.5708
+
+[node name="CoalGenerator" parent="." instance=ExtResource("2_bg3mh")]
+position = Vector2(340, -80)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_xq60u")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-80, 0)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_xq60u")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(420, 0)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("WorldBoundaryShape2D_xq60u")
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+position = Vector2(0, -200)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+shape = SubResource("WorldBoundaryShape2D_xq60u")
