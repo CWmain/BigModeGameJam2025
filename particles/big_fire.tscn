@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b05csatmoufkl"]
+
+[sub_resource type="Curve" id="Curve_xio72"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.82268, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_etula"]
+offsets = PackedFloat32Array(0, 0.713333, 0.886667)
+colors = PackedColorArray(0.996078, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0)
+
+[node name="BigFire" type="CPUParticles2D"]
+position = Vector2(22, -1)
+emitting = false
+amount = 10
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 100.0
+scale_amount_max = 100.0
+scale_amount_curve = SubResource("Curve_xio72")
+color_ramp = SubResource("Gradient_etula")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://doe6rhr40k6g"]
+[gd_scene load_steps=7 format=3 uid="uid://doe6rhr40k6g"]
 
 [ext_resource type="Texture2D" uid="uid://qe2gt1ogun0j" path="res://Objects/Wheel/Wheel.png" id="1_dqq3h"]
 [ext_resource type="Script" path="res://Objects/Wheel/rigid_wheel.gd" id="1_ofbgs"]
 [ext_resource type="Texture2D" uid="uid://bxmmcjnnh5rsa" path="res://Objects/Wheel/WheelHandle.png" id="2_xli71"]
+[ext_resource type="PackedScene" uid="uid://pcei404a52qi" path="res://particles/sparks.tscn" id="4_qxdq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pwynh"]
 radius = 85.0
@@ -38,20 +39,7 @@ texture = ExtResource("2_xli71")
 position = Vector2(7.62939e-06, 4.17233e-07)
 shape = SubResource("RectangleShape2D_k4vsh")
 
-[node name="Sparks" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 20
-lifetime = 0.2
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector2(0, 0)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 130.0
-initial_velocity_max = 150.0
-scale_amount_min = 5.0
-scale_amount_max = 5.0
-color = Color(1, 1, 0, 1)
+[node name="Sparks" parent="." instance=ExtResource("4_qxdq3")]
 
 [connection signal="mouse_entered" from="HandlePhysics" to="." method="_on_handle_physics_mouse_entered"]
 [connection signal="mouse_exited" from="HandlePhysics" to="." method="_on_handle_physics_mouse_exited"]

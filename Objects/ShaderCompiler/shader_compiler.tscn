@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://camcta3snjnce"]
+
+[ext_resource type="PackedScene" uid="uid://cml6fxx0w4vff" path="res://Objects/CoalStuff/coal_generator.tscn" id="1_jovt7"]
+
+[node name="ShaderCompiler" type="Node2D"]
+
+[node name="CoalGenerator" parent="." instance=ExtResource("1_jovt7")]
