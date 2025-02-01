@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://camcta3snjnce"]
+[gd_scene load_steps=5 format=3 uid="uid://camcta3snjnce"]
 
-[ext_resource type="PackedScene" uid="uid://cml6fxx0w4vff" path="res://Objects/CoalStuff/coal_generator.tscn" id="1_jovt7"]
+[ext_resource type="Script" path="res://Objects/ShaderCompiler/shader_compiler.gd" id="1_vxshj"]
+[ext_resource type="PackedScene" uid="uid://b05csatmoufkl" path="res://particles/big_fire.tscn" id="2_43yyd"]
+[ext_resource type="PackedScene" uid="uid://bbp0ryy8ekxlj" path="res://particles/fire_1.tscn" id="3_nt16m"]
+[ext_resource type="PackedScene" uid="uid://pcei404a52qi" path="res://particles/sparks.tscn" id="4_4201r"]
 
 [node name="ShaderCompiler" type="Node2D"]
+script = ExtResource("1_vxshj")
 
-[node name="CoalGenerator" parent="." instance=ExtResource("1_jovt7")]
+[node name="BigFire" parent="." instance=ExtResource("2_43yyd")]
+
+[node name="Fire1" parent="." instance=ExtResource("3_nt16m")]
+
+[node name="Sparks" parent="." instance=ExtResource("4_4201r")]

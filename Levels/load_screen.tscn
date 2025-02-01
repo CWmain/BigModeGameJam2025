@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bfm3w0r78n73t"]
+[gd_scene load_steps=2 format=3 uid="uid://bfm3w0r78n73t"]
+
+[ext_resource type="PackedScene" uid="uid://camcta3snjnce" path="res://Objects/ShaderCompiler/shader_compiler.tscn" id="1_3skc8"]
 
 [node name="LoadScreen" type="Node2D"]
 
@@ -7,3 +9,6 @@ offset_left = 420.0
 offset_top = 297.0
 offset_right = 720.0
 offset_bottom = 327.0
+
+[node name="ShaderCompiler" parent="." instance=ExtResource("1_3skc8")]
+position = Vector2(342, 168)
