@@ -15,6 +15,8 @@ var demandUpdated: bool = false
 
 var demandList: Array[House]
 
+@onready var game_over_screen = $"../GameOverScreen"
+
 @export_category("Demand")
 @export var ticksUntilDemandChange: int = 5
 @export var sizeOfDemandChange: int = 2
@@ -29,6 +31,8 @@ var tickStreak: int = 0
 
 var overSupply: bool = false
 var overDemand: bool = false
+
+var isGameOver: bool = false
 
 func _ready():
 	assert(timer != null)
@@ -91,4 +95,6 @@ func _on_updateDemand():
 
 func gameLoss():
 	print("\nGAME OVER\n")
+	isGameOver = true
+	game_over_screen.show()
 	timer.stop()

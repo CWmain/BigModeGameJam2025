@@ -76,3 +76,4 @@ rotation = 1.57079
 position = Vector2(141, 534)
 
 [node name="GameOverScreen" parent="." instance=ExtResource("11_pj7hf")]
+visible = false

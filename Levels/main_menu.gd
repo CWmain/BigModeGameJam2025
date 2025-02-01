@@ -8,3 +8,6 @@ func _on_start_pressed():
 
 func _on_settings_pressed():
 	print("Hide menu options and show settings options")
+
+func _on_button_pressed():
+	print("Show the stored scores")

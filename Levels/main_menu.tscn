@@ -56,4 +56,5 @@ scale = Vector2(10, 10)
 texture = ExtResource("4_75bmm")
 
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MenuOptions/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
