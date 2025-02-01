@@ -7,6 +7,8 @@ class_name Manager
 var random: RandomNumberGenerator
 signal updateLabel
 
+@export var saveFileString: String = "user://save_game.txt"
+
 var totalSupply: int = 0
 var totalDemand: int = 0
 
@@ -101,13 +103,16 @@ func gameLoss():
 	isGameOver = true
 	game_over_screen.reveal()
 	# Save highscore is better than top 10
-	saveScoreIfHigh()
+	saveScore()
 	timer.stop()
 
-func saveScoreIfHigh():
-	var file = FileAccess.open("user://save_game.txt", FileAccess.READ_WRITE)
-	var stringFile: String = file.get_as_text()
-	print(stringFile)
+func saveScore():
+	var file = FileAccess.open("user://save_game.txt", FileAccess.READ)
+	var stringFile: String
+	if (FileAccess.file_exists(saveFileString)):
+		file = FileAccess.open("user://save_game.txt", FileAccess.READ)
+		stringFile = file.get_as_text()
+		file.close()
 	
 	# Get the highscore list
 	var highScores: Array[int]
@@ -120,10 +125,11 @@ func saveScoreIfHigh():
 	# Re-sort highscore list
 	highScores.sort()
 	
+	# Ensure only 10 Highscores are stored
 	if (highScores.size() > 10):
 		highScores.pop_front()
 	
 	# Save highscore list to file
+	file = FileAccess.open("user://save_game.txt", FileAccess.WRITE)
 	file.store_line(var_to_str(highScores))
-	print(highScores)
-
+	file.close()
