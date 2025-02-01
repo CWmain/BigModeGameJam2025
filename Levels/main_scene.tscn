@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=15 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://cfmi4st3fgh6x" path="res://Objects/Managers/manager.tscn" id="2_k8he1"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dm5gydgxbfesa" path="res://Objects/CoalStuff/coal_dispenser.tscn" id="11_uyeec"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ae6m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r30qe"]
+size = Vector2(535.6, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy1e7"]
 size = Vector2(255.2, 22)
@@ -52,11 +55,19 @@ rotation = 4.71238
 position = Vector2(29.4, 35.6)
 shape = SubResource("WorldBoundaryShape2D_ae6m6")
 
-[node name="Bottom2" type="StaticBody2D" parent="."]
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(-211, 160)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(-470, 169)
+shape = SubResource("RectangleShape2D_r30qe")
+
+[node name="Left" type="StaticBody2D" parent="."]
 position = Vector2(172, 353)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 position = Vector2(-226.4, 169)
 shape = SubResource("RectangleShape2D_vy1e7")
 
