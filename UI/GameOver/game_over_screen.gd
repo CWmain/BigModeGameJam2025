@@ -13,3 +13,7 @@ func _process(delta):
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Levels/main_menu.tscn")
+
+
+func _on_retry_pressed():
+	get_tree().reload_current_scene()
