@@ -11,12 +11,3 @@ script = ExtResource("1_72xvy")
 
 [node name="PowerGauge" parent="." instance=ExtResource("2_lnxuf")]
 position = Vector2(128, 0)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 210.0
-offset_top = 47.0
-offset_right = 316.0
-offset_bottom = 78.0
-text = "SHUT DOWN"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

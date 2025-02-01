@@ -28,6 +28,3 @@ func getSupply()->int:
 		SUPPLY -= int(subtractedPower*coolant_controls.percentCoolant)
 	getSupplyCount += 1
 	return SUPPLY
-
-func _on_button_pressed():
-	SUPPLY = 0
