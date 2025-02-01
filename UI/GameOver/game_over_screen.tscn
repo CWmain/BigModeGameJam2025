@@ -14,6 +14,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_62dcq")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_left = -852.0
+offset_top = -208.0
+offset_right = 1068.0
+offset_bottom = 872.0
+color = Color(0, 0, 0, 1)
+
 [node name="MenuItems" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 415.0
@@ -34,6 +43,28 @@ text = "Main Menu"
 [node name="Settings" type="Button" parent="MenuItems"]
 layout_mode = 2
 text = "Settings"
+
+[node name="Location" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 558.0
+offset_top = 128.0
+offset_right = 598.0
+offset_bottom = 168.0
+
+[node name="Points" type="Label" parent="Location"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_right = 203.0
+offset_bottom = 154.0
+grow_horizontal = 2
+theme = ExtResource("1_gk2el")
+theme_override_font_sizes/font_size = 128
+text = "Points
+"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MenuItems/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MenuItems/MainMenu" to="." method="_on_main_menu_pressed"]

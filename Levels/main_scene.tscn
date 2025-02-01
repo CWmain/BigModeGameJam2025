@@ -75,5 +75,7 @@ rotation = 1.57079
 [node name="ReactorScene" parent="." instance=ExtResource("10_pvuu1")]
 position = Vector2(141, 534)
 
-[node name="GameOverScreen" parent="." instance=ExtResource("11_pj7hf")]
+[node name="GameOverScreen" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("11_pj7hf")]
 visible = false
+z_index = 2
+timer = NodePath("../LevelTimer")

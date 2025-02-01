@@ -43,6 +43,9 @@ func _ready():
 	timer.updateDemand.connect(_on_updateDemand)
 
 func _process(_delta):
+	if Input.is_action_just_pressed("Fail_Button"):
+		gameLoss()
+	
 	if Input.is_action_just_pressed("Test_Click"):
 		toggleAllHouses()
 	
@@ -96,5 +99,5 @@ func _on_updateDemand():
 func gameLoss():
 	print("\nGAME OVER\n")
 	isGameOver = true
-	game_over_screen.show()
+	game_over_screen.reveal()
 	timer.stop()
