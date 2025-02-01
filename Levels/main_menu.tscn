@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckvmepqhhb0xq"]
+[gd_scene load_steps=6 format=3 uid="uid://ckvmepqhhb0xq"]
 
 [ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="1_0i5ir"]
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_mow3w"]
 [ext_resource type="Texture2D" uid="uid://bqibkyd8wx7lr" path="res://Objects/House/DarkHouse.png" id="3_4vg8e"]
 [ext_resource type="Texture2D" uid="uid://bqtmy4ve7lous" path="res://Objects/House/LightHouse.png" id="4_75bmm"]
+[ext_resource type="PackedScene" uid="uid://bd5033h84vlqp" path="res://UI/Scoreboard/score_board.tscn" id="5_pfjvw"]
 
 [node name="mainMenu" type="Node2D"]
 script = ExtResource("1_mow3w")
@@ -36,7 +37,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Start"
 
-[node name="Button" type="Button" parent="MenuOptions/VBoxContainer"]
+[node name="Scores" type="Button" parent="MenuOptions/VBoxContainer"]
 layout_mode = 2
 text = "Scores
 "
@@ -55,6 +56,21 @@ position = Vector2(992, 488)
 scale = Vector2(10, 10)
 texture = ExtResource("4_75bmm")
 
+[node name="ScoreBoard" parent="." instance=ExtResource("5_pfjvw")]
+visible = false
+offset_left = 612.0
+offset_top = 214.0
+offset_right = 612.0
+offset_bottom = 214.0
+
+[node name="BackButton" type="Button" parent="ScoreBoard"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 205.0
+offset_bottom = 89.0
+text = "Back"
+
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MenuOptions/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuOptions/VBoxContainer/Scores" to="." method="_on_scores_pressed"]
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ScoreBoard/BackButton" to="." method="_on_back_button_pressed"]
