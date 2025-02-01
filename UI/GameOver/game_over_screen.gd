@@ -13,6 +13,7 @@ func _ready():
 func _process(_delta):
 	pass
 
+## Called by gameLoss() in manager to reveal the end screen
 func reveal():
 	points.text =  str(timer.tickCount)
 	show()

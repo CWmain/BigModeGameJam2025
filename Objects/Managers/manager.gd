@@ -100,4 +100,30 @@ func gameLoss():
 	print("\nGAME OVER\n")
 	isGameOver = true
 	game_over_screen.reveal()
+	# Save highscore is better than top 10
+	saveScoreIfHigh()
 	timer.stop()
+
+func saveScoreIfHigh():
+	var file = FileAccess.open("user://save_game.txt", FileAccess.READ_WRITE)
+	var stringFile: String = file.get_as_text()
+	print(stringFile)
+	
+	# Get the highscore list
+	var highScores: Array[int]
+	if (stringFile.length() == 0):
+		highScores = [timer.tickCount]
+	else:
+		highScores = str_to_var(stringFile)
+		highScores.append(timer.tickCount)
+	
+	# Re-sort highscore list
+	highScores.sort()
+	
+	if (highScores.size() > 10):
+		highScores.pop_front()
+	
+	# Save highscore list to file
+	file.store_line(var_to_str(highScores))
+	print(highScores)
+
