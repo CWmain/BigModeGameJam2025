@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://64sh36xwdjgq"]
+[gd_scene load_steps=3 format=3 uid="uid://64sh36xwdjgq"]
 
+[ext_resource type="Script" path="res://UI/GameOver/game_over_screen.gd" id="1_62dcq"]
 [ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="1_gk2el"]
 
 [node name="GameOverScreen" type="Control"]
@@ -11,6 +12,7 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_62dcq")
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -32,3 +34,5 @@ text = "Main Menu"
 [node name="Settings" type="Button" parent="MenuItems"]
 layout_mode = 2
 text = "Settings"
+
+[connection signal="pressed" from="MenuItems/MainMenu" to="." method="_on_main_menu_pressed"]
