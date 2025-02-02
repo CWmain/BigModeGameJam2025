@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtxljlpr51qa3"]
+[gd_scene load_steps=8 format=3 uid="uid://dtxljlpr51qa3"]
 
 [ext_resource type="Script" path="res://Objects/Reactor/power_gauge.gd" id="1_7t83l"]
 [ext_resource type="Texture2D" uid="uid://cl81xoy2dlip5" path="res://Objects/Reactor/PowerGauge.png" id="1_qif8k"]
 [ext_resource type="Shader" path="res://Objects/Reactor/power_gauge.gdshader" id="1_xx5mh"]
 [ext_resource type="PackedScene" uid="uid://bx4p4y27w45bl" path="res://particles/constant_explosion.tscn" id="4_rrtev"]
 [ext_resource type="AudioStream" uid="uid://cosp2r7db5dmk" path="res://sounds/ReactorFlow.mp3" id="5_ivjvp"]
+[ext_resource type="AudioStream" uid="uid://dmipwjw62do7v" path="res://sounds/breaking-glass-84819.mp3" id="5_j0670"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sgd4i"]
 shader = ExtResource("1_xx5mh")
@@ -21,6 +22,7 @@ texture = ExtResource("1_qif8k")
 [node name="ConstantExplosion" parent="." instance=ExtResource("4_rrtev")]
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_j0670")
 bus = &"SFX"
 
 [node name="Flow" type="AudioStreamPlayer2D" parent="."]
