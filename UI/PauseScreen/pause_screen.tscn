@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjhwqpo2re68m"]
+[gd_scene load_steps=4 format=3 uid="uid://cjhwqpo2re68m"]
 
 [ext_resource type="Script" path="res://UI/PauseScreen/pause_screen.gd" id="1_sg58h"]
 [ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="2_3mhcg"]
+[ext_resource type="PackedScene" uid="uid://djgeumgvwgelt" path="res://UI/Settings/settings.tscn" id="2_yuyyq"]
 
 [node name="PauseScreen" type="Control"]
 process_mode = 2
@@ -24,6 +25,14 @@ offset_right = 1650.0
 offset_bottom = 863.0
 color = Color(0, 0, 0, 1)
 
+[node name="Settings" parent="." instance=ExtResource("2_yuyyq")]
+visible = false
+layout_mode = 1
+offset_left = 394.0
+offset_top = 105.0
+offset_right = 394.0
+offset_bottom = 105.0
+
 [node name="MenuItems" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 415.0
@@ -42,10 +51,16 @@ text = "Resume
 layout_mode = 2
 text = "Retry"
 
+[node name="Settings" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Settings"
+
 [node name="MainMenu" type="Button" parent="MenuItems"]
 layout_mode = 2
 text = "Main Menu"
 
+[connection signal="closedSettings" from="Settings" to="." method="_on_settings_closed_settings"]
 [connection signal="pressed" from="MenuItems/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MenuItems/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MenuItems/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuItems/MainMenu" to="." method="_on_main_menu_pressed"]

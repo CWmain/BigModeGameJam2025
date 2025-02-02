@@ -1,5 +1,8 @@
 extends Control
 
+@onready var settings = $Settings
+@onready var menu_items = $MenuItems
+
 func reveal():
 	show()
 	get_tree().paused = true
@@ -18,3 +21,13 @@ func _on_resume_pressed():
 	get_tree().paused = false
 	hide()
 	print("resume")
+
+
+func _on_settings_pressed():
+	settings.show()
+	menu_items.hide()
+
+
+func _on_settings_closed_settings():
+	menu_items.show()
+	settings.hide()
