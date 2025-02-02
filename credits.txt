@@ -1,5 +1,10 @@
 Sounds
 - Big Fire Sound
+	MaxHammarbäck
 	https://pixabay.com/sound-effects/fire-sound-efftect-21991/
 - Coal Burn Sound
+	Alice_soundz
 	https://pixabay.com/sound-effects/fire-sound-effects-224089/
+- Game Start
+	plasterbrain (Freesound)
+	https://pixabay.com/sound-effects/game-start-6104/

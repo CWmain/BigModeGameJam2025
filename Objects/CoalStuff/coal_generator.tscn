@@ -85,5 +85,6 @@ bus = &"SFX"
 
 [node name="BigFireAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_h82cd")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Collection" to="." method="_on_collection_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckvmepqhhb0xq"]
+[gd_scene load_steps=7 format=3 uid="uid://ckvmepqhhb0xq"]
 
 [ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="1_0i5ir"]
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_mow3w"]
 [ext_resource type="Texture2D" uid="uid://bqibkyd8wx7lr" path="res://Objects/House/DarkHouse.png" id="3_4vg8e"]
 [ext_resource type="Texture2D" uid="uid://bqtmy4ve7lous" path="res://Objects/House/LightHouse.png" id="4_75bmm"]
 [ext_resource type="PackedScene" uid="uid://bd5033h84vlqp" path="res://UI/Scoreboard/score_board.tscn" id="5_pfjvw"]
+[ext_resource type="AudioStream" uid="uid://c8ckvt5koci6f" path="res://sounds/game-start-6104.mp3" id="6_bisef"]
 
 [node name="mainMenu" type="Node2D"]
 script = ExtResource("1_mow3w")
@@ -69,6 +70,11 @@ offset_left = 80.0
 offset_right = 205.0
 offset_bottom = 89.0
 text = "Back"
+
+[node name="GameStartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bisef")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Scores" to="." method="_on_scores_pressed"]
