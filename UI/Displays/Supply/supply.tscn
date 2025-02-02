@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd2vd3iqvo53d"]
+[gd_scene load_steps=3 format=3 uid="uid://dd2vd3iqvo53d"]
 
 [ext_resource type="Script" path="res://UI/Displays/Supply/supply.gd" id="1_3qciu"]
+[ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="2_28plj"]
 
 [node name="Supply" type="Node2D"]
 script = ExtResource("1_3qciu")
@@ -14,5 +15,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("2_28plj")
+text = "0"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_top = -23.0
+offset_right = 51.0
+theme = ExtResource("2_28plj")
 text = "Supply"
 metadata/_edit_use_anchors_ = true

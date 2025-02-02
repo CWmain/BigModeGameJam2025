@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlscus0ab1wi7"]
+[gd_scene load_steps=3 format=3 uid="uid://dlscus0ab1wi7"]
 
 [ext_resource type="Script" path="res://UI/Displays/Clock/clock.gd" id="1_cpj8u"]
+[ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="2_j3sqn"]
 
 [node name="Clock" type="Node2D"]
 script = ExtResource("1_cpj8u")
@@ -14,5 +15,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Clock"
+theme = ExtResource("2_j3sqn")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = -1.0
+theme = ExtResource("2_j3sqn")
+text = "Score"
 metadata/_edit_use_anchors_ = true

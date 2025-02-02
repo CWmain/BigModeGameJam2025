@@ -29,15 +29,15 @@ timer = NodePath("../LevelTimer")
 [node name="Displays" type="Node" parent="."]
 
 [node name="Clock" parent="Displays" node_paths=PackedStringArray("timer") instance=ExtResource("5_7ud24")]
-position = Vector2(16, 14)
+position = Vector2(16, 30)
 timer = NodePath("../../LevelTimer")
 
 [node name="Demand" parent="Displays" node_paths=PackedStringArray("m") instance=ExtResource("6_bm4fj")]
-position = Vector2(519, 8)
+position = Vector2(519, 24)
 m = NodePath("../../Manager")
 
 [node name="Supply" parent="Displays" node_paths=PackedStringArray("m") instance=ExtResource("7_ik7vq")]
-position = Vector2(302, 10)
+position = Vector2(415, 24)
 m = NodePath("../../Manager")
 
 [node name="HouseFactory" parent="." node_paths=PackedStringArray("m") instance=ExtResource("3_0jk0m")]

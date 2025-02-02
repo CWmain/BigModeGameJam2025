@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxxdrcyoky3nn"]
+[gd_scene load_steps=3 format=3 uid="uid://dxxdrcyoky3nn"]
 
 [ext_resource type="Script" path="res://UI/Displays/Demand/demand.gd" id="1_6sxlf"]
+[ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="2_tq4yl"]
 
 [node name="Demand" type="Node2D"]
 script = ExtResource("1_6sxlf")
@@ -14,5 +15,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("2_tq4yl")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_top = -23.0
+offset_right = 60.0
+theme = ExtResource("2_tq4yl")
 text = "Demand"
 metadata/_edit_use_anchors_ = true
