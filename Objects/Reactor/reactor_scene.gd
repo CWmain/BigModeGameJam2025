@@ -10,6 +10,8 @@ extends Node2D
 ## When the coolent is maxed, SUPPLY is reduced by below amount
 @export var subtractedPower: int = 1000
 
+var broken: bool = false
+
 var SUPPLY: int = 0:
 	set(value):
 		SUPPLY = max(0, value)
@@ -17,12 +19,15 @@ var SUPPLY: int = 0:
 var getSupplyCount: int = 0
 
 func _process(_delta):
-	if SUPPLY > maxPower:
+	if SUPPLY > maxPower and !broken:
 		power_gauge.breakGauge()
-		return
-	power_gauge.setGauge(float(SUPPLY)/float(maxPower))
+		broken = true
+
+	power_gauge.setGauge(clampf(float(SUPPLY)/float(maxPower),0,1))
 
 func getSupply()->int:
+	if broken:
+		return 0
 	if getSupplyCount % 2 == 0:
 		SUPPLY = addedPower + (SUPPLY*2)
 		SUPPLY -= int(subtractedPower*coolant_controls.percentCoolant)
