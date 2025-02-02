@@ -18,6 +18,7 @@ var demandUpdated: bool = false
 var demandList: Array[House]
 
 @onready var game_over_screen = $"../GameOverScreen"
+@onready var pause_screen = $"../PauseScreen"
 
 @export_category("Demand")
 @export var ticksUntilDemandChange: int = 5
@@ -47,6 +48,9 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("Fail_Button"):
 		gameLoss()
+	
+	if Input.is_action_just_pressed("Escape") and !isGameOver:
+		pause_screen.reveal()
 	
 	if Input.is_action_just_pressed("Test_Click"):
 		toggleAllHouses()

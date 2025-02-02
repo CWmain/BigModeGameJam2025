@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjhwqpo2re68m"]
+
+[ext_resource type="Script" path="res://UI/PauseScreen/pause_screen.gd" id="1_sg58h"]
+[ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="2_3mhcg"]
+
+[node name="PauseScreen" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sg58h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_left = -852.0
+offset_top = -208.0
+offset_right = 1068.0
+offset_bottom = 872.0
+color = Color(0, 0, 0, 1)
+
+[node name="MenuItems" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 124.0
+offset_right = 738.0
+offset_bottom = 528.0
+theme = ExtResource("2_3mhcg")
+theme_override_constants/separation = 16
+
+[node name="Resume" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="Retry" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Retry"
+
+[node name="MainMenu" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Settings" type="Button" parent="MenuItems"]
+layout_mode = 2
+text = "Settings"
+
+[connection signal="pressed" from="MenuItems/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuItems/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MenuItems/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MenuItems/Settings" to="." method="_on_settings_pressed"]
