@@ -18,6 +18,7 @@ var broken: bool = false
 var canSupplyAgain: bool = true
 
 @onready var break_sound = $BreakSound
+@onready var spark_sound = $SparkSound
 
 func _physics_process(_delta):
 	if broken:
@@ -36,8 +37,11 @@ func _physics_process(_delta):
 	
 	if SUPPLY > maxPower - 100:
 		sparks.emitting = true
+		if !spark_sound.playing:
+			spark_sound.play()
 	else:
 		sparks.emitting = false
+		spark_sound.stop()
 	
 	# If overworked breaks
 	if SUPPLY > maxPower:
