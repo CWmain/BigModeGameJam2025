@@ -17,10 +17,10 @@ script = ExtResource("1_62dcq")
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
-offset_left = -852.0
-offset_top = -208.0
-offset_right = 1068.0
-offset_bottom = 872.0
+offset_left = -328.0
+offset_top = -216.0
+offset_right = 1592.0
+offset_bottom = 864.0
 color = Color(0, 0, 0, 1)
 
 [node name="MenuItems" type="VBoxContainer" parent="."]

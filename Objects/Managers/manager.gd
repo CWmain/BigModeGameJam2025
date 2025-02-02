@@ -137,3 +137,7 @@ func saveScore():
 	file = FileAccess.open("user://save_game.txt", FileAccess.WRITE)
 	file.store_line(var_to_str(highScores))
 	file.close()
+
+
+func _on_pause_button_pause_game():
+	pause_screen.reveal()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=18 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://cfmi4st3fgh6x" path="res://Objects/Managers/manager.tscn" id="2_k8he1"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://64sh36xwdjgq" path="res://UI/GameOver/game_over_screen.tscn" id="11_pj7hf"]
 [ext_resource type="PackedScene" uid="uid://dm5gydgxbfesa" path="res://Objects/CoalStuff/coal_dispenser.tscn" id="11_uyeec"]
 [ext_resource type="AudioStream" uid="uid://cdkkurom38um8" path="res://sounds/backgroundMusic.mp3" id="13_6d7dr"]
+[ext_resource type="PackedScene" uid="uid://cr0fsa65v7ti7" path="res://Objects/PauseButton/pause_button.tscn" id="14_po2km"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ae6m6"]
 
@@ -116,3 +117,9 @@ process_mode = 3
 stream = ExtResource("13_6d7dr")
 autoplay = true
 bus = &"Music"
+
+[node name="PauseButton" parent="." instance=ExtResource("14_po2km")]
+position = Vector2(1101, 50)
+scale = Vector2(5, 5)
+
+[connection signal="pauseGame" from="PauseButton" to="Manager" method="_on_pause_button_pause_game"]
