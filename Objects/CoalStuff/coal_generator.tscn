@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cml6fxx0w4vff"]
+[gd_scene load_steps=10 format=3 uid="uid://cml6fxx0w4vff"]
 
 [ext_resource type="Texture2D" uid="uid://xa7tkmao72xt" path="res://Objects/CoalStuff/TempCoalGen.png" id="1_27460"]
 [ext_resource type="Script" path="res://Objects/CoalStuff/coal_generator.gd" id="1_kar8t"]
 [ext_resource type="PackedScene" uid="uid://bbp0ryy8ekxlj" path="res://particles/fire_1.tscn" id="3_l5nvf"]
 [ext_resource type="PackedScene" uid="uid://b05csatmoufkl" path="res://particles/big_fire.tscn" id="4_yygjh"]
+[ext_resource type="AudioStream" uid="uid://cye6kv23kogky" path="res://sounds/CoalBurn.mp3" id="5_0qr4v"]
+[ext_resource type="AudioStream" uid="uid://d06i6g5jbgxya" path="res://sounds/BigFireSound.mp3" id="6_h82cd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj457"]
 size = Vector2(20, 7.2)
@@ -76,5 +78,12 @@ scale_amount_curve = SubResource("Curve_xio72")
 color_ramp = SubResource("Gradient_etula")
 
 [node name="BigFire" parent="FireParticles" instance=ExtResource("4_yygjh")]
+
+[node name="CoalBurn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0qr4v")
+bus = &"SFX"
+
+[node name="BigFireAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_h82cd")
 
 [connection signal="body_entered" from="Collection" to="." method="_on_collection_body_entered"]

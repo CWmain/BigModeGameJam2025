@@ -20,6 +20,8 @@ extends Node2D
 var SUPPLY : int = 0
 var broken: bool = false
 
+@onready var coal_burn = $CoalBurn
+@onready var big_fire_audio = $BigFireAudio
 
 
 
@@ -73,6 +75,7 @@ func bigFire() -> void:
 	fire_3.emitting = false
 	big_fire.emitting = true
 	print("Furnace combusted")
+	big_fire_audio.play()
 	broken = true
 	SUPPLY = 0
 
@@ -81,6 +84,7 @@ func _on_collection_body_entered(body):
 	if typeof(body) != typeof(Coal):
 		print("Wrong type")
 		return
+	coal_burn.play()
 	SUPPLY += powerPerCoal
 	body.destroy()
 	print("Coal Collected")
