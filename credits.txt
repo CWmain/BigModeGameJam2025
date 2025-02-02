@@ -1,4 +1,4 @@
-Sounds
+Sounds Credits
 - Big Fire Sound
 	MaxHammarbäck
 	https://pixabay.com/sound-effects/fire-sound-efftect-21991/
@@ -8,3 +8,7 @@ Sounds
 - Game Start
 	plasterbrain (Freesound)
 	https://pixabay.com/sound-effects/game-start-6104/
+	
+- Game Backgroun Music
+	XtremeFreddy
+	https://pixabay.com/sound-effects/game-music-loop-3-144252/

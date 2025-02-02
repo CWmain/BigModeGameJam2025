@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hyb3vvce52a8"]
+[gd_scene load_steps=17 format=3 uid="uid://hyb3vvce52a8"]
 
 [ext_resource type="PackedScene" uid="uid://cfmi4st3fgh6x" path="res://Objects/Managers/manager.tscn" id="2_k8he1"]
 [ext_resource type="PackedScene" uid="uid://02bikho87cuj" path="res://Objects/House/house_factory.tscn" id="3_0jk0m"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cjhwqpo2re68m" path="res://UI/PauseScreen/pause_screen.tscn" id="11_10npa"]
 [ext_resource type="PackedScene" uid="uid://64sh36xwdjgq" path="res://UI/GameOver/game_over_screen.tscn" id="11_pj7hf"]
 [ext_resource type="PackedScene" uid="uid://dm5gydgxbfesa" path="res://Objects/CoalStuff/coal_dispenser.tscn" id="11_uyeec"]
+[ext_resource type="AudioStream" uid="uid://cdkkurom38um8" path="res://sounds/backgroundMusic.mp3" id="13_6d7dr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ae6m6"]
 
@@ -109,3 +110,9 @@ offset_right = 2.0
 visible = false
 z_index = 2
 timer = NodePath("../LevelTimer")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("13_6d7dr")
+autoplay = true
+bus = &"Music"
