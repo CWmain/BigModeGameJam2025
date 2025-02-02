@@ -47,16 +47,7 @@ func _ready():
 	timer.updateSupply.connect(_on_updateSupply)
 	timer.updateDemand.connect(_on_updateDemand)
 
-func _process(_delta):
-	if Input.is_action_just_pressed("Fail_Button"):
-		gameLoss()
-	
-	if Input.is_action_just_pressed("Escape") and !isGameOver:
-		pause_screen.reveal()
-	
-	if Input.is_action_just_pressed("Test_Click"):
-		toggleAllHouses()
-	
+func _process(_delta):	
 	# Once both supply and demand have been updated in the current tick
 	if (supplyUpdated and demandUpdated):
 		supplyUpdated = false
