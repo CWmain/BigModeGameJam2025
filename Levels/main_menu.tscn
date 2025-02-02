@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckvmepqhhb0xq"]
+[gd_scene load_steps=8 format=3 uid="uid://ckvmepqhhb0xq"]
 
 [ext_resource type="Theme" uid="uid://br0lkmc6eeu2c" path="res://Themes/MenuButtons.tres" id="1_0i5ir"]
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_mow3w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqtmy4ve7lous" path="res://Objects/House/LightHouse.png" id="4_75bmm"]
 [ext_resource type="PackedScene" uid="uid://bd5033h84vlqp" path="res://UI/Scoreboard/score_board.tscn" id="5_pfjvw"]
 [ext_resource type="AudioStream" uid="uid://c8ckvt5koci6f" path="res://sounds/game-start-6104.mp3" id="6_bisef"]
+[ext_resource type="PackedScene" uid="uid://djgeumgvwgelt" path="res://UI/Settings/settings.tscn" id="7_e8and"]
 
 [node name="mainMenu" type="Node2D"]
 script = ExtResource("1_mow3w")
@@ -76,7 +77,15 @@ stream = ExtResource("6_bisef")
 autoplay = true
 bus = &"Music"
 
+[node name="Settings" parent="." instance=ExtResource("7_e8and")]
+visible = false
+offset_left = 400.0
+offset_top = 185.0
+offset_right = 400.0
+offset_bottom = 185.0
+
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Scores" to="." method="_on_scores_pressed"]
 [connection signal="pressed" from="MenuOptions/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="ScoreBoard/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="closedSettings" from="Settings" to="." method="_on_settings_closed_settings"]

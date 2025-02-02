@@ -40,10 +40,6 @@ text = "Retry"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Settings" type="Button" parent="MenuItems"]
-layout_mode = 2
-text = "Settings"
-
 [node name="Location" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 558.0

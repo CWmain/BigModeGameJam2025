@@ -18,8 +18,3 @@ func _on_resume_pressed():
 	get_tree().paused = false
 	hide()
 	print("resume")
-
-
-
-func _on_settings_pressed():
-	print("Settings")

@@ -46,11 +46,6 @@ text = "Retry"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Settings" type="Button" parent="MenuItems"]
-layout_mode = 2
-text = "Settings"
-
 [connection signal="pressed" from="MenuItems/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MenuItems/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MenuItems/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="MenuItems/Settings" to="." method="_on_settings_pressed"]
