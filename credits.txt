@@ -25,3 +25,7 @@ Sounds Credits
 - Glass Breaking
 	wjl (Freesound)
 	https://pixabay.com/sound-effects/breaking-glass-84819/
+	
+- House Power
+	SoundReality
+	https://pixabay.com/sound-effects/light-switch-156813/

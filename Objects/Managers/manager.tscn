@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfmi4st3fgh6x"]
+[gd_scene load_steps=3 format=3 uid="uid://cfmi4st3fgh6x"]
 
 [ext_resource type="Script" path="res://Objects/Managers/manager.gd" id="1_l152l"]
+[ext_resource type="AudioStream" uid="uid://b3skdo84y0c60" path="res://sounds/light-switch-156813.mp3" id="2_5kvhy"]
 
 [node name="Manager" type="Node"]
 script = ExtResource("1_l152l")
+
+[node name="HouseToggle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5kvhy")
+bus = &"SFX"

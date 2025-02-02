@@ -37,6 +37,8 @@ var overDemand: bool = false
 
 var isGameOver: bool = false
 
+@onready var house_toggle = $HouseToggle
+
 func _ready():
 	assert(timer != null)
 	random = RandomNumberGenerator.new()
@@ -92,6 +94,7 @@ func _on_updateDemand():
 		for i in range(0,sizeOfDemandChange):
 			var rIndex = int(random.randf()*100) % demandList.size()
 			demandList[rIndex].isDemanding = !demandList[rIndex].isDemanding
+		house_toggle.play()
 	
 	# Get the current demand
 	var curDemand: int = 0
