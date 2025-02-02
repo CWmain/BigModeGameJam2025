@@ -34,3 +34,7 @@ func _on_back_button_pressed():
 func _on_settings_closed_settings():
 	menu_options.show()
 	settings.hide()
+
+
+func _on_exit_pressed():
+	get_tree().quit()
