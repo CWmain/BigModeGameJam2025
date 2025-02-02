@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://camcta3snjnce"]
+[gd_scene load_steps=6 format=3 uid="uid://camcta3snjnce"]
 
 [ext_resource type="Script" path="res://Objects/ShaderCompiler/shader_compiler.gd" id="1_vxshj"]
 [ext_resource type="PackedScene" uid="uid://b05csatmoufkl" path="res://particles/big_fire.tscn" id="2_43yyd"]
+[ext_resource type="PackedScene" uid="uid://bx4p4y27w45bl" path="res://particles/constant_explosion.tscn" id="2_yx5pb"]
 [ext_resource type="PackedScene" uid="uid://bbp0ryy8ekxlj" path="res://particles/fire_1.tscn" id="3_nt16m"]
 [ext_resource type="PackedScene" uid="uid://pcei404a52qi" path="res://particles/sparks.tscn" id="4_4201r"]
 
 [node name="ShaderCompiler" type="Node2D"]
 script = ExtResource("1_vxshj")
+
+[node name="ConstantExplosion" parent="." instance=ExtResource("2_yx5pb")]
 
 [node name="BigFire" parent="." instance=ExtResource("2_43yyd")]
 
