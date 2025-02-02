@@ -13,3 +13,7 @@ Sounds Credits
 - Game Backgroun Music
 	XtremeFreddy
 	https://pixabay.com/sound-effects/game-music-loop-3-144252/
+
+- Wheel Break Sound
+	jc.sg (Freesound)
+	https://pixabay.com/sound-effects/plate-break-1-36468/

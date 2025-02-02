@@ -7,7 +7,7 @@ var onButton: bool = false
 
 signal pauseGame
 
-func _process(delta):
+func _process(_delta):
 	if onButton and Input.is_action_just_pressed("Hold"):
 		print("Pause game")
 		pauseGame.emit()

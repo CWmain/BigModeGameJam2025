@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://doe6rhr40k6g"]
+[gd_scene load_steps=8 format=3 uid="uid://doe6rhr40k6g"]
 
 [ext_resource type="Texture2D" uid="uid://qe2gt1ogun0j" path="res://Objects/Wheel/Wheel.png" id="1_dqq3h"]
 [ext_resource type="Script" path="res://Objects/Wheel/rigid_wheel.gd" id="1_ofbgs"]
 [ext_resource type="Texture2D" uid="uid://bxmmcjnnh5rsa" path="res://Objects/Wheel/WheelHandle.png" id="2_xli71"]
 [ext_resource type="PackedScene" uid="uid://pcei404a52qi" path="res://particles/sparks.tscn" id="4_qxdq3"]
+[ext_resource type="AudioStream" uid="uid://b3hnoob3s51q7" path="res://sounds/plate-break-1-36468.mp3" id="5_r4ne1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pwynh"]
 radius = 85.0
@@ -40,6 +41,10 @@ position = Vector2(7.62939e-06, 4.17233e-07)
 shape = SubResource("RectangleShape2D_k4vsh")
 
 [node name="Sparks" parent="." instance=ExtResource("4_qxdq3")]
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r4ne1")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="HandlePhysics" to="." method="_on_handle_physics_mouse_entered"]
 [connection signal="mouse_exited" from="HandlePhysics" to="." method="_on_handle_physics_mouse_exited"]

@@ -17,6 +17,8 @@ var broken: bool = false
 ## Bool to prevent double adding when passing 2 Pi rotation
 var canSupplyAgain: bool = true
 
+@onready var break_sound = $BreakSound
+
 func _physics_process(_delta):
 	if broken:
 		return
@@ -57,6 +59,7 @@ func getSupply() -> int:
 
 func fallOff() -> void:
 	print("Wheel fell off")
+	break_sound.play()
 	broken = true
 	SUPPLY = 0
 	canHold = false
